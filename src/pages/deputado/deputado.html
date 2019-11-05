@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Deputados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content padding>
+
+    <ion-searchbar
+    showCancelButton="true"
+    (search)="onSearch($event)"
+  ></ion-searchbar>
+
+  <ion-list>
+  
+        <button block  ion-item *ngFor="let deputado of deputados" (click)="detalhe(deputado.id, deputado.idLegislatura)" >
+          <ion-thumbnail item-start>
+            <ion-img [src]="deputado?.urlFoto"></ion-img>
+          </ion-thumbnail>
+          <h2>Deputado: {{ deputado.nome }} </h2>
+          <h2>Partido: {{ deputado.siglaPartido }}</h2>
+          <h2>UF: {{ deputado.siglaUf }}</h2>
+          <h2>Email: {{ deputado.email }}</h2>
+        </button>
+     
+  </ion-list>
+</ion-content>

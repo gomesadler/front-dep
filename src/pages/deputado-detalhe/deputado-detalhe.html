@@ -1,0 +1,50 @@
+<!--
+  Generated template for the DeputadoDetalhePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Deputados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card color="light">
+      
+      <ion-img style="width:100%;height:400px;" [src]="urlImg"></ion-img>
+      
+    <ion-card-header>
+      <ion-card-title>{{ deputado?.ultimoStatus.nomeEleitoral }}</ion-card-title>
+     
+    </ion-card-header>
+    <ion-card-content>
+        <h1>Partido:</h1>
+        <h2>{{ deputado?.ultimoStatus.siglaPartido }}</h2>
+        <h1>CPF:</h1>
+        <h2>{{ deputado?.cpf }}</h2>
+        <h1>Nome Civil:</h1>
+        <h2>{{ deputado?.nomeCivil }}</h2>
+        <h1>Situacao:</h1>
+        <h2>{{ deputado?.ultimoStatus.situacao }}</h2>
+    </ion-card-content>    
+  </ion-card>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>GABINETE Nº {{ deputado?.ultimoStatus.gabinete.nome }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h1>Sala: {{ deputado?.ultimoStatus.gabinete.sala }}</h1>
+      <h1>Prédio: {{ deputado?.ultimoStatus.gabinete.predio }}</h1>
+      <h1>Andar: {{ deputado?.ultimoStatus.gabinete.andar }}</h1>
+      <h1>Telefone: {{ deputado?.ultimoStatus.gabinete.telefone }}</h1>
+      <h1>Email: {{ deputado?.ultimoStatus.gabinete.email }}</h1>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
